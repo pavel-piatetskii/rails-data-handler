@@ -9,14 +9,14 @@ class UpdateController < ApplicationController
     json_from_url = open(url).read
     updates_all = JSON.parse(json_from_url, opt = {symbolize_names: true})
     
-    #existing_external_ids = Update.pluck(:external_id)
+    existing_external_ids = Update.pluck(:external_id)
     updates_all.map {|update|
-      byebug
-      update['external_id'] = update.delete 'id'
-      Update.create(
-        update
-        )}
-        
+      if !existing_external_ids.include?(update[:id])
+        update[:external_id] = update.delete :id
+        Update.create(update)
+      end
+    }
+    #byebug
   end
 
 end
