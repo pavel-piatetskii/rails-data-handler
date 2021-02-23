@@ -10,12 +10,12 @@ class UpdateController < ApplicationController
     updates_all = JSON.parse(json_from_url)
     
     updates_all.map {|update|
-      update[:external_id] = update.delete :id
+      update[:external_id] = update.delete 'id'
+      #byebug
       Update.create(
         update
         )}
         
-    byebug
   end
 
 end
