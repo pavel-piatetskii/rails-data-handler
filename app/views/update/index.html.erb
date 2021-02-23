@@ -1,2 +1,12 @@
-<h1>Update#index</h1>
-<p>Find me in app/views/update/index.html.erb</p>
+<h1>Updates feed</h1>
+<section class="updates-feed">
+  <% @updates.map {|update| %>
+  <div class="updates-feed__container">
+    <div class="updates-feed__container__date-user">
+      <span><%= update.created_at %></span>
+      <span><%= update.user_handle %></span>
+    </div>
+    <p class="updates-feed__container__message"><%= update.message %></p>
+  </div>
+  <% } %>
+</section>

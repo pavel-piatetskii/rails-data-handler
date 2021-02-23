@@ -1,3 +1,27 @@
 // Place all the styles related to the Update controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.updates-feed {
+  flex-direction: column;
+
+  &__container {
+    flex-direction: column;
+    max-width: 500px;
+    border: 2px solid darkgray;
+    border-radius: 4px;
+    margin: 10px 0;
+
+    &__date-user {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0.5em 1em;
+    }
+
+    &__message {
+      padding: 0.5em 1em;
+      margin: 0;
+    }
+
+  }
+}
