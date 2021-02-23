@@ -21,8 +21,19 @@ class UpdateController < ApplicationController
         Update.create(update)
       end
     }
+
     
-    @updates = Update.all
+    # Keywords to search for in the message field
+    # The search query can easily expanded by adding new keywords
+    keywords = ['coke', 'coca-cola', 'diet-cola']
+
+    # Every keyword is transformed into a separate "LOWER... LIKE..." expression
+    # Then all expressions are joined to form a very long "LIKE... OR LIKE..." string
+    filter_query = keywords.map {|word|
+      "LOWER(message) LIKE '%#{word}%'"  
+    }.join(" OR ")
+
+    @updates = Update.where(filter_query).order(sentiment: :desc)
   end
 
 end
