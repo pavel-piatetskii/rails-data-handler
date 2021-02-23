@@ -33,7 +33,10 @@ class UpdateController < ApplicationController
       "LOWER(message) LIKE '%#{word.downcase}%'"  
     }.join(" OR ")
 
+    # Filter all stored updates and order them by sentiment
     @updates = Update.where(filter_query).order(sentiment: :desc)
+
+    # Count total and filtered updates, calculate percentage for statistics
     @total_updates_count = Update.all.count
     @filter_matches_count = @updates.length
     @percentage = (100 * @filter_matches_count / @total_updates_count).to_i
