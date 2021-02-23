@@ -30,13 +30,16 @@ class UpdateController < ApplicationController
     # Every keyword is transformed into a separate "LOWER... LIKE..." expression
     # Then all expressions are joined to form a very long "LIKE... OR LIKE..." string
     filter_query = keywords.map {|word|
-      "LOWER(message) LIKE '%#{word}%'"  
+      "LOWER(message) LIKE '%#{word.downcase}%'"  
     }.join(" OR ")
 
     @updates = Update.where(filter_query).order(sentiment: :desc)
     @total_updates_count = Update.all.count
     @filter_matches_count = @updates.length
     @percentage = (100 * @filter_matches_count / @total_updates_count).to_i
+
+    # Change the 'contain' word form is there's only one match
+    @contains_grammar = @filter_matches_count == 1 ? 'contains' : 'contain'
 
   end
 

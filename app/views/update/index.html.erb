@@ -1,9 +1,16 @@
 <h1>Updates feed</h1>
 
 <section class="updates-percentage">
-  <p class="updates-percentage__counter">
-    <%= @percentage %>
-  </p>
+  <span class="updates-percentage__numbers">
+    Currently <%= @filter_matches_count %>
+    out of <%= @total_updates_count %> updates
+  </span>
+  <span class="updates-percentage__share">
+    	&nbsp;(<%= @percentage %>%)&nbsp;
+  </span>
+  <span>
+    <%= @contains_grammar %> keywords
+  </span>
 </section>
 
 <section class="updates-feed">
