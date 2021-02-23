@@ -1,10 +1,12 @@
-<h1>List of all updates</h1>
-<section class="updates-list">
+<h1>Updates feed</h1>
+<section class="updates-feed">
   <% @updates.map {|update| %>
-  <div class="updates-list__container">
-    <span><%= update.created_at %></span>
-    <span><%= update.user_handle %></span>
-    <p><%= update.message %></p>
+  <div class="updates-feed__container">
+    <div class="updates-feed__container__date-user">
+      <span><%= update.created_at %></span>
+      <span><%= update.user_handle %></span>
+    </div>
+    <p class="updates-feed__container__message"><%= update.message %></p>
   </div>
   <% } %>
 </section>
