@@ -1,2 +1,8 @@
-<h1>Update#index</h1>
-<p>Find me in app/views/update/index.html.erb</p>
+<h1>List of all updates</h1>
+<section class="updates-list">
+  <% @updates.map {|update| %>
+  <div>
+    <p><%= update.message %></p>
+  </div>
+  <% } %>
+</section>
