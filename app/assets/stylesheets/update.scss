@@ -11,6 +11,7 @@
     border: 2px solid darkgray;
     border-radius: 4px;
     margin: 10px 0;
+    cursor: pointer;
 
     &__date-user {
       flex-direction: row;
@@ -19,6 +20,11 @@
     }
 
     &__message {
+      padding: 0.5em 1em;
+      margin: 0;
+    }
+
+    &__details {
       padding: 0.5em 1em;
       margin: 0;
     }
