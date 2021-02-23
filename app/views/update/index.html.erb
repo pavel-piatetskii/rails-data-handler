@@ -1,7 +1,9 @@
 <h1>List of all updates</h1>
 <section class="updates-list">
   <% @updates.map {|update| %>
-  <div>
+  <div class="updates-list__container">
+    <span><%= update.created_at %></span>
+    <span><%= update.user_handle %></span>
     <p><%= update.message %></p>
   </div>
   <% } %>
