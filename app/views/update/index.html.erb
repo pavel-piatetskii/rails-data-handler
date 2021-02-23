@@ -1,4 +1,11 @@
 <h1>Updates feed</h1>
+
+<section class="updates-percentage">
+  <p class="updates-percentage__counter">
+    <%= @percentage %>
+  </p>
+</section>
+
 <section class="updates-feed">
   <% @updates.map {|update| %>
   <div class="updates-feed__container">

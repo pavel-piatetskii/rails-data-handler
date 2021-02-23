@@ -34,6 +34,10 @@ class UpdateController < ApplicationController
     }.join(" OR ")
 
     @updates = Update.where(filter_query).order(sentiment: :desc)
+    @total_updates_count = Update.all.count
+    @filter_matches_count = @updates.length
+    @percentage = (100 * @filter_matches_count / @total_updates_count).to_i
+
   end
 
 end
