@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  created_at: 2021-02-23 17:38:52
+  followers: 1
+  external_id: 1
+  message: MyText
+  sentiment: 1.5
+  updated_at: 2021-02-23 17:38:52
+  user_handle: MyString
+
+two:
+  created_at: 2021-02-23 17:38:52
+  followers: 1
+  external_id: 1
+  message: MyText
+  sentiment: 1.5
+  updated_at: 2021-02-23 17:38:52
+  user_handle: MyString
