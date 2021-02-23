@@ -1,4 +1,18 @@
 <h1>Updates feed</h1>
+
+<section class="updates-statistics">
+  <span class="updates-statistics__numbers">
+    Currently <%= @filter_matches_count %>
+    out of <%= @total_updates_count %> updates
+  </span>
+  <span class="updates-statistics__percentage">
+    	&nbsp;(<%= @percentage %>%)&nbsp;
+  </span>
+  <span>
+    <%= @contains_grammar %> keywords
+  </span>
+</section>
+
 <section class="updates-feed">
   <% @updates.map {|update| %>
   <div class="updates-feed__container">
