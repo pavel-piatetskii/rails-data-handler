@@ -22,7 +22,7 @@
     </div>
     <p class="updates-feed__container__message"><%= update.message %></p>
     
-    <p class="updates-feed__container__details"><%= update.message %>
+    <p class="updates-feed__container__details" hidden><%= update.message %>
       The <b>sentiment</b> of this message is <b><%= update.sentiment %></b>
       and it was received by <b><%= update.followers%>
       <%= update.followers == 1 ? "person" : "people" %></b>
